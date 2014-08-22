@@ -1,0 +1,42 @@
+<div class="form-block" style="margin-bottom: 12px;" >
+
+    <form method="post">
+        <fieldset>
+
+            <input type="hidden" name="step" value="3" />
+            <input type="hidden" name="mode" value="<?php echo $mode ?>" />
+
+            <legend>3 / 3 Other settings</legend>
+
+            <label>Time zone:</label>
+            <select name="site_timezone" class="input-xlarge"><?php echo TimezoneList(date_default_timezone_get()); ?></select>
+
+            <label>Site name:</label>
+            <span class="help-block">Name displayed in the title and in the pages of the site. </span>
+            <input type="text" name="site_name" value="<?php echo $config['s_name']; ?>">
+
+            <label>Site description:</label>
+            <span class="help-block">The default for the indexing of your site by search engines. Also appears under the name of the site.</span>
+            <input type="text" name="site_about" value="<?php echo $config['s_about']; ?>">	
+
+            <label>Meta keywords:</label>
+            <span class="help-block">Used for the indexing of your site by search engines. Enter through the gap, the total length of not > 200 characters </span>
+            <input type="text" name="site_keyword" value="<?php echo $config['s_keywords']; ?>">
+
+            <label class="checkbox">
+                <input type="checkbox" name="sbuffer" value="1" <?php echo ($config['sbuffer'])?'checked="checked"':'' ?>> Buffering generated images
+            </label>
+            
+            <span class="help-block">It is recommended to include, if you intend to allow the use of HD skins on your site.</span>
+            
+            <label class="checkbox">
+              <input type="checkbox" name="default_skin" value="1" <?php echo ($config['default_skin'])?'checked="checked"':'' ?>> Generate the default skin
+            </label>
+            <span class="help-block">For the user, depending on the gender, check the skin will be installed, the task in the Control Panel</span>            
+
+            <button type="submit" class="btn">Next</button>
+
+        </fieldset>
+    </form>
+
+</div>

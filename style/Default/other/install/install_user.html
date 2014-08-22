@@ -1,0 +1,28 @@
+<div class="form-block" style="margin-bottom: 12px;" >
+
+<form method="post">
+  <fieldset>
+  
+	<input type="hidden" name="step" value="2" />
+	<input type="hidden" name="mode" value="<?php echo $mode ?>" />
+	
+    <legend>2 / 3 Admin account</legend>
+	
+	<label>Username:</label>
+	<span class="help-block">Username new admin</span>
+    <input type="text" name="site_user" value="<?php echo ConfigPostStr('site_user') ?>">
+	
+	<label>Password:</label>
+	<span class="help-block">Password for auth</span>
+    <input type="password" name="site_password">	
+	
+	<label>Acception:</label>
+	<span class="help-block">Password again</span>
+    <input type="password" name="site_repassword">
+	<br/>
+    <button type="submit" class="btn">Next</button>
+	
+  </fieldset>
+</form>
+
+</div>

@@ -1,0 +1,58 @@
+<form action="index.php?mode=control&do=group&sid=<?php echo $id ?>" method="post">
+
+<input type="hidden" name="edit" value="1" />
+
+  <fieldset>
+  
+    <legend>Settings group [<?php echo $group_name ?>]</legend>
+	<label>Name:</label>
+    <input type="text" name="name" value="<?php echo $group_name ?>">	
+	
+	<label>File size: (Kb)</label>
+	<span class="help-block">The maximum file size for uploading, whether the image of the character or his cloak</span>
+    <input type="text" name="max_fsize" value="<?php echo $group['max_fsize'] ?>">
+	
+	<label>Image size:</label>
+	<span class="help-block">Highest resolution for an image file <br/> Image Resolution image | Image Resolution cloak</span>
+		<select name="max_ratio" size="1">
+			<?php echo $html_ratio ?>
+		</select>
+		
+	<label>Access level:</label>
+	<span class="help-block">0 - Prohibition auth. 2 - Auth in the game. (1 - 14) - Access for any pages of site.  15 - Access for control panel. </span>
+    <input type="text" name="lvl" value="<?php echo $group['lvl'] ?>">
+	
+    <span class="help-block">Other permissions for groups:</span>
+	
+	<label class="checkbox">
+	  <input type="checkbox" name="change_skin" value="1" <?php echo ($group['change_skin'])?'checked="checked"':'' ?>> Change skin
+	</label>
+	
+	<label class="checkbox">
+	  <input type="checkbox" name="change_pass" value="1" <?php echo ($group['change_pass'])?'checked="checked"':'' ?>> Change password
+	</label>
+	
+	<label class="checkbox">
+	  <input type="checkbox" name="change_cloak" value="1" <?php echo ($group['change_cloak'])?'checked="checked"':'' ?>> Change cloak
+	</label>
+	
+	<label class="checkbox">
+	  <input type="checkbox" name="change_login" value="1" <?php echo ($group['change_login'])?'checked="checked"':'' ?>> Change username
+	</label>
+	
+	<label class="checkbox">
+	  <input type="checkbox" name="add_news" value="1" <?php echo ($group['add_news'])?'checked="checked"':'' ?>> Adding news
+	</label>
+	
+	<label class="checkbox">
+	  <input type="checkbox" name="add_comm" value="1" <?php echo ($group['add_comm'])?'checked="checked"':'' ?>> Adding comments
+	</label>
+	
+	<label class="checkbox">
+	  <input type="checkbox" name="adm_comm" value="1" <?php echo ($group['adm_comm'])?'checked="checked"':'' ?>> Remove any comments
+	</label>
+	
+    <button type="submit" class="btn">Save</button>
+	
+  </fieldset>
+</form>

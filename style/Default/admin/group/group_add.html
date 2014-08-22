@@ -1,0 +1,67 @@
+<form action="index.php?mode=control&do=group" method="post"> 
+  <fieldset>
+    <legend>Create new group</legend>
+	
+	<label>Name:</label>
+    <input type="text" name="name">
+	
+	<label>File size: (Kb)</label>
+	<span class="help-block">The maximum file size for uploading, whether the image of the character or his cloak</span>
+    <input type="text" name="max_fsize" value="20">	
+	
+	<label>Image size:</label>
+	<span class="help-block">Highest resolution for an image file <br/> Image Resolution image | Image Resolution cloak</span>
+		<select name="max_ratio" size="1">
+			<?php echo $html_ratio ?>
+		</select>
+		
+	<label>Access level:</label>
+	
+	<span class="help-block">0 - Prohibition auth. 2 - Auth in the game. (1 - 14) - Access for any pages of site.  15 - Access for control panel. </span>
+    <input type="text" name="lvl" value="1">
+    <span class="help-block">Other permissions for groups:</span>
+	
+	<?php if (isset($bd_names['sp_skins'])) { ?>
+	
+		<label class="checkbox">
+		  <input type="checkbox" name="sp_upload" value="1"> Adding images to skinPoser
+		</label>
+		
+		<label class="checkbox">
+		  <input type="checkbox" name="sp_change" value="1"> Change skin through skinPoser
+		</label>
+	
+	<?php } ?>
+	
+	<label class="checkbox">
+	  <input type="checkbox" name="change_skin" value="1"> Change skin
+	</label>
+	
+	<label class="checkbox">
+	  <input type="checkbox" name="change_pass" value="1"> Change password
+	</label>
+	
+	<label class="checkbox">
+	  <input type="checkbox" name="change_cloak" value="1"> Change cloak
+	</label>
+	
+	<label class="checkbox">
+	  <input type="checkbox" name="change_login" value="1"> Change username
+	</label>
+	
+	<label class="checkbox">
+	  <input type="checkbox" name="add_news" value="1"> Adding news
+	</label>
+	
+	<label class="checkbox">
+	  <input type="checkbox" name="add_comm" value="1"> Adding comments
+	</label>
+	
+	<label class="checkbox">
+	  <input type="checkbox" name="adm_comm" value="1"> Remove any comments
+	</label>
+	
+    <button type="submit" class="btn">Create</button>
+	
+  </fieldset>
+</form>

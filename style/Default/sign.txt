@@ -1,0 +1,5 @@
+name=Default; 
+version=1.0; 
+author=NC22, KillerProst; 
+about=Default theme, License GPLv3<br /> Feedback:<br /> http://webmcr.com; 
+editable=no; 

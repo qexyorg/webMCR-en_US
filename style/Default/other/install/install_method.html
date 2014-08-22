@@ -1,0 +1,21 @@
+<div id="restore-box" class="form-block-rl" style="padding-bottom: 12px;">
+    <form class="form-inline" action="<?php echo BASE_URL ?>install/install.php" method="post">	
+        <fieldset>
+            <legend>Installation types</legend>
+            <input type="hidden" name="step" value="0" />
+            
+            <select name="mode">
+                <option value="usual" <?php echo ($mode == 'usual')? 'selected' : '' ?> >Usual</option>
+                <option value="xenforo" <?php echo ($mode == 'xenforo')? 'selected' : '' ?> >Compatibility with xenForo</option>
+                <option value="ipb" <?php echo ($mode == 'ipb')? 'selected' : '' ?> >Compatibility with Invision Power Board</option>
+                <option value="wp" <?php echo ($mode == 'wp')? 'selected' : '' ?> >Compatibility with WordPress</option>
+                <option value="dle" <?php echo ($mode == 'dle')? 'selected' : '' ?> >Compatibility with DataLife Engine</option>	
+                <option value="joomla" <?php echo ($mode == 'joomla')? 'selected' : '' ?> >Compatibility with Joomla</option>	
+                <option value="xauth" <?php echo ($mode == 'xauth')? 'selected' : '' ?> >Compatibility with xAuth</option>
+                <option value="authme" <?php echo ($mode == 'authme')? 'selected' : '' ?> >Compatibility with AuthMe</option>					
+            </select> 
+
+            <button type="submit" name="submit" class="btn">Setup</button>
+        </fieldset>  
+    </form>
+</div>

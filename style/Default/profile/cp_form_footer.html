@@ -1,0 +1,16 @@
+<label>Code:</label>
+				
+	<img src="<?php echo BASE_URL ?>instruments/captcha/captcha.php?refresh=<?php echo rand(1337,31337) ?>" alt="Code" class="img-polaroid" width="70" height="30"/> 
+	<input type="text" name="antibot" placeholder="Code" maxlength="4" class="antibot" style="top: 4px;" />
+		
+    <p style="margin-top: 12px;"><button type="submit" class="btn">Accept</button></p>
+  </fieldset>
+</form>
+
+<?php if ($html_info) { ?>
+
+	<div class="alert"><?php echo $html_info ?></div>
+
+<?php } ?>
+
+</div>

@@ -1,0 +1,16 @@
+<form action="index.php?mode=control&do=delete" method="post">
+
+    <input type="hidden" name="confirm" value="1" />											
+    <input type="hidden" name="user_id" value="<?php echo $user_id; ?>" />	
+    <?php echo tokenTool('setinput') ?>
+
+    <p>User <b><?php echo $user_name; ?></b> will be removed</p>											
+    <p>All comments made by the user will be removed.</p>											
+    <p>Accept this action</p>					 
+
+    <p><a class="btn" href="?mode=control" >To search</a></p>
+    <p><input type="submit" class="btn" value="Accept" /></p>
+
+</form>
+
+<?php echo $info; ?>

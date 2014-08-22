@@ -1,0 +1,13 @@
+<form action="index.php?mode=control&do=ban" method="post" >
+
+    <input type="hidden" name="user_id" value="<?php echo $user_id; ?>" />
+    <input type="hidden" name="confirm" value="1" />	
+    <?php echo tokenTool('setinput') ?>
+
+    <p> User <b><?php echo $user_name; ?></b> will be blocked. However, he will not be able to enter the game or go to your account on the site.</p>
+
+    <p>Accept action</p>
+    <p><a class="btn" href="?mode=control" >To search</a></p>
+    <p><input type="submit" class="btn" value="Accept" /></p>
+
+</form>

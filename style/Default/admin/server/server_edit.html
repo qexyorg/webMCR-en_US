@@ -1,0 +1,61 @@
+<form action="index.php?mode=control&amp;do=server_edit&amp;sid=<?php echo $id ?>" method="post">
+
+  <fieldset>
+    <legend>Change the settings of the monitored server</legend>
+	<label>Name:</label>
+    <input type="text" name="name" value="<?php echo $serv_name ?>">	
+	<label>Connection info</label>
+	<span class="help-block">Information available to the user. It is recommended to specify the server address and port. Example: 127.0.0.1:25565 </span>
+    <input type="text" name="info" value="<?php echo $serv_info ?>">	
+	<label>Connection protocol</label>
+    <span class="help-block">
+	RCON - server status, number of players, a list of players<br/>
+	Query - server status, number of players, a list of players, the number of slots<br/>
+	Simple Query - server status, number of players, number of slots, the minimum load on the game server</span>	
+	<select name="method" id="serv_conn_method" onchange="ServerConnectMethod()">
+
+		<option value="0" <?php echo (!$serv_method)?'selected':'' ?>>Simple Query</option>
+		<option value="1" <?php echo ($serv_method==1)?'selected':'' ?>>Query</option>
+                <option value="2" <?php echo ($serv_method==2)?'selected':'' ?>>RCON</option>
+                <option value="3" <?php echo ($serv_method==3)?'selected':'' ?>>JSONAPI</option>
+	</select>
+	<div style="<?php echo ($serv_method==3 or $serv_method==2)? '' : 'display: none;' ?>" id="rcon_pass_holder">
+	<label>JSONAPI username</label>
+	<input type="text" name="json_user" value="<?php echo $serv_s_user ?>">
+	<label>RCON/JSONAPI password</label>
+	<input type="password" name="rcon_pass" value="">
+	</div>
+	<label>Server address</label>
+	<span class="help-block">IP address or host name used to connect to the specified protocol</span>
+    <input type="text" name="address" value="<?php echo $serv_address ?>">
+	<label>Server port</label>
+	<span class="help-block">Port to establish a connection for a given protocol</span>
+    <input type="text" name="port" value="<?php echo $serv_port ?>">	
+	<label>Timer update ( Minutes )</label>
+	<span class="help-block">The shortest possible time to the new treatment to the game server.</span>
+    <input type="text" name="timeout" value="<?php echo $serv_ref ?>">	
+	<label>Position:</label>
+	<span class="help-block">The greater the value, the higher on the list server in position.</span>
+    <input type="text" name="priority" value="<?php echo $serv_priority ?>">	
+    <span class="help-block">Placement on pages:</span>
+	<label class="checkbox">
+	  <input type="checkbox" name="main_page" value="1"  <?php echo ($serv_side)?'checked="checked"':'' ?>> <a href="index.php">Home page</a>
+	</label>
+	<label class="checkbox">
+	  <input type="checkbox" name="game_page" value="1" <?php echo ($serv_game)?'checked="checked"':'' ?>> <a href="<?php echo $site_ways['mcraft'] ?>/news.php">News page</a>
+	</label>
+	<!--<label class="checkbox">
+	  <input type="checkbox" name="stat_page" value="1" <?php echo ($serv_mon)?'checked="checked"':'' ?>> Страница списка серверов
+	</label>-->
+    <button type="submit" class="btn">Save</button>
+  </fieldset>
+</form>
+
+<form action="index.php?mode=control&amp;do=server_edit&amp;sid=<?php echo $id ?>" method="post"> 
+
+<input type="hidden" name="delete" value="1" />
+
+  <fieldset>
+    <button type="submit" class="btn">Delete</button>
+  </fieldset>
+</form>
