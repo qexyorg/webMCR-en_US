@@ -51,16 +51,16 @@ class Profile extends View
         if ($time_sec < 0)
             return $out;
         if ($time_sec < 60)
-            $out = "меньше минуты";
+            $out = "less than one minute";
 
         $out .= (int) ($time_sec / 86400);
-        $out .= " д. ";
+        $out .= " D. ";
         $time_sec = $time_sec % 86400;
         $out .= (int) ($time_sec / 3600);
-        $out .= " ч. ";
+        $out .= " H. ";
         $time_sec = $time_sec % 3600;
         $out .= (int) ($time_sec / 60);
-        $out .= " мин.";
+        $out .= " Min.";
 
         return $out;
     }
@@ -98,7 +98,7 @@ class Profile extends View
             $tmpParam = $this->user->email();
             $user_info['email'] = array(($tmpParam) ? $tmpParam : lng('NOT_SET'), 'E-Mail');
 
-            $user_info['money'] = array($this->user->getMoney() . ' rub.', 'Balance');
+            $user_info['money'] = array($this->user->getMoney() . ' $.', 'Balance');
             $user_info['ip'] = array($this->user->ip(), 'IP');
         }
 
