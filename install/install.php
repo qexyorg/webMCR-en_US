@@ -36,7 +36,7 @@ if (file_exists(MCR_ROOT.'config.php')) {
              header('Location: ' . BASE_URL . 'install/install.php?mode=' . $mode);
              exit;
          } else {
-             echo 'Файл ' . MCR_ROOT . 'config.php already exit. Remove this file for next step.';
+             echo 'File ' . MCR_ROOT . 'config.php already exit. Remove this file for next step.';
              exit;
          }
  } else {
