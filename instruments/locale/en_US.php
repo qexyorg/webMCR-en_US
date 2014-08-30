@@ -97,7 +97,7 @@ $MCR_LANG = array (
   'ENTER' => 'Login',
   'OPEN' => 'Open',
   
-  'REPASSVSPASS' => 'Пароли не совпадают',
+  'REPASSVSPASS' => 'Passwords do not match',
   
   'CHARACTERS' => 'Characters',
   
