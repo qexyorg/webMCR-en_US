@@ -435,9 +435,9 @@ class News_Item extends Item
 
         $item_exist = $this->Exist();
 
-        $title = ($item_exist) ? $this->title() : 'Новость не найдена';
+        $title = ($item_exist) ? $this->title() : 'News not found';
         $category_id = ($item_exist) ? $this->categoryID() : 0;
-        $category = ($item_exist) ? CategoryManager::GetNameByID($category_id) : 'Без категории';
+        $category = ($item_exist) ? CategoryManager::GetNameByID($category_id) : 'Without category';
         $category_link = Rewrite::GetURL(array('category', $category_id), array('', 'cid'));
 
         ob_start();
@@ -554,7 +554,7 @@ class NewsManager extends View
 
     public function ShowCategorySelect()
     {
-        $cat_list = '<option value="0">Последние новости</option>';
+        $cat_list = '<option value="0">Latest News</option>';
         $cat_list .= CategoryManager::GetList($this->category_id);
 
         ob_start();
