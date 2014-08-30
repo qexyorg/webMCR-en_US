@@ -51,16 +51,16 @@ class Profile extends View
         if ($time_sec < 0)
             return $out;
         if ($time_sec < 60)
-            $out = "меньше минуты";
+            $out = "less than one minute";
 
         $out .= (int) ($time_sec / 86400);
-        $out .= " д. ";
+        $out .= " d. ";
         $time_sec = $time_sec % 86400;
         $out .= (int) ($time_sec / 3600);
-        $out .= " ч. ";
+        $out .= " h. ";
         $time_sec = $time_sec % 3600;
         $out .= (int) ($time_sec / 60);
-        $out .= " мин.";
+        $out .= " min.";
 
         return $out;
     }
