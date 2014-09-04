@@ -1,28 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7 ]><html class="ie ie6" xmlns="http://www.w3.org/1999/xhtml" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" xmlns="http://www.w3.org/1999/xhtml" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" xmlns="http://www.w3.org/1999/xhtml" lang="en" prefix="og: http://ogp.me/ns#"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" prefix="og: http://ogp.me/ns#">
+<head>
+<!-- Basic Page Needs
+ ================================================== -->
+<meta charset="utf-8" />
+<link rel="alternate" hreflang="en-us, en-ca" href="alternateURL">
+<title><?php echo $config['s_name'] ?> ” <?php echo $page; ?> </title>
+<meta http-equiv="X-UA-Compatible" content="ID=Edge, chrome=1">
+<base href="<?php echo BASE_URL ?>">
+<!-- Mobile Specific Metas
+================================================== --> 
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<meta http-equiv="content-language" content="en" />
+<meta name="application-name" content="<?php echo $config['s_name'] ?>" />
+<meta name="language" content="english" />
+<meta name="description" content="&copy <?php echo $config['s_about'] ?>" />
+<meta name="keywords" content="<?php echo $config['s_keywords'] ?>" />
+<meta name="Author" content="<?php echo $config['s_name'] ?>" />
+<meta name="Copyright" content="&copy; <?php echo $config['s_name'] ?> 2014 All rights reserved." />
+<meta name="author" content="NC22"/><!-- first version of stylesheet was developed by KillerProst -->
+<meta name="Robots" content="index,follow" />
+<meta name="Revisit-After" content="1 Hours" /> 
 
-    <head>
-        <meta charset="utf-8">
-
-        <title><?php echo $config['s_name'] ?> — <?php echo $page; ?> </title>
-
-        <base href="<?php echo BASE_URL ?>"> 
-
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="<?php echo $config['s_about'] ?>">
-        <meta name="author" content="NC22"><!-- first version of stylesheet was developed by KillerProst -->
-
+<meta property="og:title" content="<?php echo $config['s_name'] ?>" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://website.com/" />
+<meta property="og:image" content="http://website.com/img/logo_big.jpg" />
+<meta property="og:description" content="&copy <?php echo $config['s_about'] ?>" />
+<meta property="og:site_name" content="<?php echo $config['s_name'] ?>" />
+<meta property="og:locale" content="en_EN" />   
+<!-- CSS
+	================================================== -->
         <link href="<?php View::URL('css/style.css') ?>" rel="stylesheet">
         <link href="<?php View::URL('css/serverbar.css') ?>" rel="stylesheet">
-
         <?php echo $content_js ?>
-
-        <link rel="alternate" type="application/rss+xml" title="RSS" href="instruments/rss20/rss.php" />
-
-        <!--[if lt IE 9]>
-          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-        <![endif]-->
-
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link rel="alternate" type="application/rss+xml" title="RSS" href="instruments/rss20/rss.php" />
+<!-- Facivons
+	================================================== -->
         <link rel="shortcut icon" href="<?php View::URL('ico/favicon.ico') ?>">
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php View::URL('ico/apple-touch-icon-144-precomposed.png') ?>">
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="<?php View::URL('ico/apple-touch-icon-114-precomposed.png') ?>">
@@ -92,7 +114,7 @@
         <div class="container">	
             <div class="container-fluid">
                 <div class="row-fluid">
-                    <!-- Левый контейнер -->
+                    <!-- Left Sibebar -->
                     <div class="span4">		
 
                         <?php echo $content_side ?>
@@ -100,9 +122,9 @@
                         <?php echo $content_servers ?>
 
                     </div>
-                    <!-- /.Левый контейнер -->
+                    <!-- /.Left Sidebar -->
 
-                    <!-- Правый контейнер -->
+                    <!-- Right Sidebar -->
                     <div class="span8">	
 
                         <?php echo $content_main;?> 	
@@ -112,7 +134,7 @@
                         </div>
                     </div>
 
-                    <!-- /.Правый контейнер  -->
+                    <!-- /.Right Sidebar  -->
                 </div>
             </div> 
         </div>
@@ -121,16 +143,25 @@
         <footer class="footer-block">	
 
             <div style="float: right;"><?php echo FEEDBACK; ?>.</div>
-            Full or partial copying <?php echo $config['s_name'] ?>  is prohibited.
+            © <?php echo $config['s_name'] ?>. All rights reserved. All creations copyright of the creators.<br>
+<a href="https://minecraft.net/" >Minecraft</a> is copyright <a href="https://mojang.com/">Mojang AB</a> and is not affiliated with this site. Get the game! </p>
 
         </footer>
-
-        <script src="<?php View::URL('js/smiles.js') ?>"></script>	
-        <script src="<?php View::URL('js/tools.js') ?>"></script>
-
-        <script src="<?php View::URL('js/monitoring.js') ?>"></script>
-        <script src="<?php View::URL('js/ajax.js') ?>"></script>
-     
-        <script src="<?php View::URL('js/bootstrap-without-jquery.js') ?>"></script>
+	<!-- JavaScript
+  ================================================== -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'XXXXXX', {'cookieName': 'google_ga',  'cookieDomain': '.domein.ltd',  'cookieExpires': 60 * 60 * 24 * 28  });
+  ga('set', 'forceSSL', true);  
+  ga('send', 'pageview' {'anonymizeIp': true  });
+</script>
+<script src="<?php View::URL('js/smiles.js') ?>"></script>	
+<script src="<?php View::URL('js/tools.js') ?>"></script>
+<script src="<?php View::URL('js/monitoring.js') ?>"></script>
+<script src="<?php View::URL('js/ajax.js') ?>"></script>
+<script src="<?php View::URL('js/bootstrap-without-jquery.js') ?>"></script>
     </body>
 </html>
